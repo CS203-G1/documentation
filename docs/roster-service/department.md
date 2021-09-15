@@ -120,7 +120,7 @@ Could not find department efd12781-392b-4c97-b388-8722bd709601 from company 692b
 ---
 
 ## Update Department 
-Do a complete update a Department that belongs to a Company using the Company Id and Department Id
+Do a complete update for a Department that belongs to a Company using the Company Id and Department Id
 
 |                          |                                                         |
 | ------------------------ | ------------------------------------------------------- |
