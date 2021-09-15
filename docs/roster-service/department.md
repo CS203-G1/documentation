@@ -14,12 +14,12 @@ sidebar_position: 2
 ## Add Department 
 Add a Department that belongs to a Company to the database with basic information 
 
-|                          |                  |
-| ------------------------ | ---------------- |
+|                          |                                          |
+| ------------------------ | ---------------------------------------- |
 | **URL**                  | `/api/companies/{companyId}/departments` |
-| **Method**               | `POST`           |
-| **Auth required**        | No               |
-| **Permissions required** | None             |
+| **Method**               | `POST`                                   |
+| **Auth required**        | No                                       |
+| **Permissions required** | None                                     |
 
 **Data constraints**
 
@@ -44,12 +44,12 @@ Note that `id` is auto-generated and of `UUID` datatype
 
 ```json
 {
-  "id": "807549a2-8507-4a75-aef3-e0ad761e597d",
-  "company": {
-    "id": "4926cf68-f829-4a08-8f51-077b1d42bf70",
-    "name": "Company"
-  },
-  "name": "Department"
+    "id": "807549a2-8507-4a75-aef3-e0ad761e597d",
+    "name": "Department",    
+    "company": {
+        "id": "4926cf68-f829-4a08-8f51-077b1d42bf70",
+        "name": "Company"
+    }   
 }
 ```
 
