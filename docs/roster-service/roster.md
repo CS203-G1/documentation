@@ -18,7 +18,7 @@ Add an Roster that belongs to a WorkLocation to the database with basic informat
 
 |                          |                                                       |
 | ------------------------ | ----------------------------------------------------- |
-| **URL**                  | `/work-locations/{workLocationId}/rosters/{rosterId}` |
+| **URL**                  | `/work-locations/{workLocationId}/rosters` |
 | **Method**               | `POST`                                                |
 | **Auth required**        | Yes                                                   |
 | **Permissions required** | `ROLE_EMPLOYER`                                       |

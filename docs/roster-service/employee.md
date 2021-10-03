@@ -178,8 +178,8 @@ Response will reflect back an error when the Department or Employee does not exi
 
 ---
 
-## Get Company
-Get a Company to the database using the UUID
+## Get Employee
+Get a Employee to the database using the Employee Id and Department Id
 
 |                          |                                                          |
 | ------------------------ | -------------------------------------------------------- |
