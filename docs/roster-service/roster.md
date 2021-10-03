@@ -1,27 +1,35 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# Roster
+#  Roster
 ## Roster Attributes
-| Attributes         | Type                  | Description                                     |
-| ------------------ | --------------------- | ----------------------------------------------- |
-| **Id**             | UUID                  | UUID generated automatically by Spring Boot     |
-| **Date**           | LocalDate             | Date of roster creation                         |
-| **WorkLocation**   | WorkLocation          | Work location of the roster that is created for |
-| **RosterEmployee** | Set< RosterEmployee > | Set of employees that the roster contains       |
+| Attributes         | Type         | Description                                   |
+| ------------------ | ------------ | --------------------------------------------- |
+| **Id**             | UUID         | UUID generated automatically by Spring Boot   |
+| **date**           | LocalDate    | The date the roster is for                    |
+| **WorkLocation**   | WorkLocation | The work location this roster is for          |
+| **RosterEmployee** | Set          | Set of RosterEmployee objects this Roster has |
 
----
+--- 
 
-## Add Roster
-Add a Company to the database with basic information 
+## Add Roster 
+Add an Roster that belongs to a WorkLocation to the database with basic information 
 
 |                          |                                                |
 | ------------------------ | ---------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters` |
 | **Method**               | `POST`                                         |
-| **Auth required**        | No                                             |
-| **Permissions required** | None                                           |
+| **Auth required**        | Yes                                            |
+| **Permissions required** | `ROLE_EMPLOYER`                                |
+
+**Data constraints**
+
+```json
+{
+  "date": "YYYY-MM-DD"
+}
+```
 
 ### Success Response
 
@@ -31,100 +39,55 @@ Add a Company to the database with basic information
 
 Response will reflect back a representation of the newly added Roster.
 
-For a Work Location with ID `27b06c9d-a553-4a88-a681-b7cbc045a9e5` on the local database.
+For a Roster with ID `c0c13d3a-060b-4149-8b33-cc2d20a22ced` and for the date of `2021-09-16` on the local database.
 
 Note that `id` is auto-generated and of `UUID` datatype
 
 
 ```json
 {
-    "id": "53b55e75-5230-4b5c-8e5d-f8787e8fb3f3",
-    "date": "2021-09-16",
-    "roster_employees": [{
-        "id": "a88f8825-34e2-44cb-a9f5-4482c82bbc48",
-        "name": "Employee 1",
-        "vaccinationStatus": "SECOND_DOSE",
-        "vaccineBrand": "PFIZER",
-        "healthStatus": "HEALTHY"
-  }]
+  "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
+  "date": "2021-09-16"
 }
+
 ```
 
 ### Error Response 
 
-**Code** : `404 Not Found`
+**Code** : `400 Bad Request`
 
 **Content examples**
 
-Response will reflect back a string that explains what resource is not found.
+Response will reflect back an error when the Request Body does not conform to the constraints.
 
-For a Work Location with ID `27b06c9d-a553-4a88-a681-b7cbc045a9e5` is not found on the local database.
-
-```
-Could not find work location 27b06c9d-a553-4a88-a681-b7cbc045a9e5
-```
-
----
-
-## Get Roster
-Get a Roster that belongs to a Work Location using the Work Location Id, Roster Id
-
-|                          |                                                           |
-| ------------------------ | --------------------------------------------------------- |
-| **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
-| **Method**               | `GET`                                                     |
-| **Auth required**        | No                                                        |
-| **Permissions required** | None                                                      |
-
-### Success Response
-
-**Code** : `200 OK`
-
-**Content examples**
-
-Response will reflect back a representation of the Work Location.
-
-For a Roster with ID `1b400d57-c949-40ed-a77b-5f175db7eae3` on the local database.
+For a Roster with invalid Date format
 
 ```json
 {
-    "id": "53b55e75-5230-4b5c-8e5d-f8787e8fb3f3",
-    "date": "2021-09-16",
-    "roster_employees": [{
-        "id": "a88f8825-34e2-44cb-a9f5-4482c82bbc48",
-        "name": "Employee 1",
-        "vaccinationStatus": "SECOND_DOSE",
-        "vaccineBrand": "PFIZER",
-        "healthStatus": "HEALTHY"
-    }]
+  "timestamp": "2021-10-03T03:29:23.389+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees"
 }
 ```
-
-### Error Response 
-
-**Code** : `404 Not Found`
-
-**Content examples**
-
-Response will reflect back a string that explains what resource is not found.
-
-For a Roster with ID `bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25` from Work Location with ID `53b55e75-5230-4b5c-8e5d-f8787e8fb3f3` that is not found on the local database.
-
-```
-Unable to find roster bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25 from work location 53b55e75-5230-4b5c-8e5d-f8787e8fb3f3
-```
-
 ---
-
-## Update Roster
-Update a Roster that belongs to a Work Location using the Work Location Id, Roster Id
+## Update Roster 
+Update an Roster that belongs to a WorkLocation to the database with the updated date
 
 |                          |                                                           |
 | ------------------------ | --------------------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
 | **Method**               | `PUT`                                                     |
-| **Auth required**        | No                                                        |
-| **Permissions required** | None                                                      |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
+
+**Data constraints**
+
+```json
+{
+  "date": "YYYY-MM-DD"
+}
+```
 
 ### Success Response
 
@@ -132,22 +95,77 @@ Update a Roster that belongs to a Work Location using the Work Location Id, Rost
 
 **Content examples**
 
-Response will reflect back a representation of the Work Location.
+Response will reflect back a representation of the newly added Roster.
 
-For a Roster with ID `1b400d57-c949-40ed-a77b-5f175db7eae3` on the local database.
+For a Roster with ID `c0c13d3a-060b-4149-8b33-cc2d20a22ced` and for the date of `2021-09-16` on the local database.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
 
 ```json
 {
-    "id": "53b55e75-5230-4b5c-8e5d-f8787e8fb3f3",
-    "date": "2021-09-16",
-    "roster_employees": [{
-        "id": "a88f8825-34e2-44cb-a9f5-4482c82bbc48",
-        "name": "Employee 1",
-        "vaccinationStatus": "SECOND_DOSE",
-        "vaccineBrand": "PFIZER",
-        "healthStatus": "HEALTHY"
-    }]
+  "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
+  "date": "2021-09-16"
 }
+
+```
+
+### Error Response 
+
+**Code** : `400 Bad Request`
+
+**Content examples**
+
+Response will reflect back an error when the Request Body does not conform to the constraints.
+
+For a Roster with invalid Date format
+
+```json
+{
+  "timestamp": "2021-10-03T03:29:23.389+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5fe42a64b9/rosters/d8ef2f16-a04a-41dd-849e-9e1407718d16"
+}
+```
+
+---
+
+## Get Rosters
+Get all Rosters that belongs to a particular Work Location from the database using the Work Location Id
+
+|                          |                                                |
+| ------------------------ | ---------------------------------------------- |
+| **URL**                  | `/api/work-locations/{workLocationId}/rosters` |
+| **Method**               | `GET`                                          |
+| **Auth required**        | Yes                                            |
+| **Permissions required** | `ROLE_EMPLOYER`                                |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back an array of representations of the Roster that belongs to a Work Location.
+
+For a Work Location with 2 Rosterss created.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+[
+ {
+    "id": "ae15ede6-d5af-4aab-ad4d-ad13ee49af70",
+    "date": "2021-09-16"
+  },
+  {
+    "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
+    "date": "2021-09-17"
+  }
+]
 ```
 
 ### Error Response 
@@ -156,16 +174,68 @@ For a Roster with ID `1b400d57-c949-40ed-a77b-5f175db7eae3` on the local databas
 
 **Content examples**
 
-Response will reflect back a string that explains what resource is not found.
+Response will reflect back an error when the WorkLocation does not exist in the database.
 
-For a Roster with ID `bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25` from Work Location with ID `53b55e75-5230-4b5c-8e5d-f8787e8fb3f3` that is not found on the local database.
+```json
+{
+  "timestamp": "2021-10-03T04:11:25.710+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5fe42a64b5/rosters"
+}
+```
+
+--- 
+## Get Roster
+Get a Roster from the database using the Roster Id and Work Location Id
+
+|                          |                                                           |
+| ------------------------ | --------------------------------------------------------- |
+| **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
+| **Method**               | `GET`                                                     |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a representation of the Roster.
+
+For a Roster with ID `c0c13d3a-060b-4149-8b33-cc2d20a22ced` and for the date of `2021-09-16` on the local database.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+{
+  "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
+  "date": "2021-09-16"
+}
 
 ```
-Unable to find roster bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25 from work location 53b55e75-5230-4b5c-8e5d-f8787e8fb3f3
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Department or Employee does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T04:06:46.079+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5fe42a64b9/rosters/d8ef2f16-a04a-41dd-849e-9e1407718d16"
+}
 ```
 
 ---
-
 ## Delete Roster
 Delete a Roster that belongs to a Work Location using the Roster Id and Work Location Id
 
@@ -173,8 +243,8 @@ Delete a Roster that belongs to a Work Location using the Roster Id and Work Loc
 | ------------------------ | --------------------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
 | **Method**               | `DELETE`                                                  |
-| **Auth required**        | No                                                        |
-| **Permissions required** | None                                                      |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
 
 ### Success Response
 
@@ -186,10 +256,15 @@ Delete a Roster that belongs to a Work Location using the Roster Id and Work Loc
 
 **Content examples**
 
-Response will reflect back a string that explains what resource is not found.
+Response will reflect back an error when the Work Location or Roster does not exist in the database.
 
-For a Roster with ID `bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25` from Work Location with ID `53b55e75-5230-4b5c-8e5d-f8787e8fb3f3` that is not found on the local database.
+```json
+{
+  "timestamp": "2021-10-03T04:16:23.786+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5ff42a64b9/rosters/d8ef2f16-a04a-41dd-849e-9e1407718d16"
+}
+```
 
-```
-Unable to find roster bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25 from work location 53b55e75-5230-4b5c-8e5d-f8787e8fb3f3
-```
+---
