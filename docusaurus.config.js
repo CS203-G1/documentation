@@ -22,13 +22,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/CS203-G1/documentation.git',
+          editUrl: 'https://github.com/CS203-G1/documentation',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/CS203-G1/documentation.git',
+            'https://github.com/CS203-G1/documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
