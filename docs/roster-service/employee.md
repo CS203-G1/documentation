@@ -228,3 +228,62 @@ Response will reflect back an error when the Department or Employee does not exi
 ```
 
 ---
+
+## Get All Employes from Company
+Get all Employees from a Company the database using the Company Id
+
+|                          |                                        |
+| ------------------------ | -------------------------------------- |
+| **URL**                  | `/api/companies/{companyId}/employees` |
+| **Method**               | `GET`                                  |
+| **Auth required**        | Yes                                    |
+| **Permissions required** | `ROLE_EMPLOYER`                        |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back an array of representation of the Employees from the Company.
+
+For a company with two employees:
+
+```json
+[
+  {
+    "id": "236935a2-b490-4b2e-8779-efc3e984fb34",
+    "name": "Employee 1",
+    "vaccinationStatus": "SECOND_DOSE",
+    "vaccinationBrand": "PFIZER",
+    "healthStatus": "HEALTHY"
+  },
+  {
+    "id": "b4748ffd-dc09-4ede-b928-dc0ea585f023",
+    "name": "Employee 2",
+    "vaccinationStatus": "SECOND_DOSE",
+    "vaccinationBrand": "PFIZER",
+    "healthStatus": "HEALTHY"
+  }
+]
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Company does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T15:58:47.726+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/companies/efd12781-392b-4c97-b388-8722bd709602/employees"
+}
+```
+
+---
