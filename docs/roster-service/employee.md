@@ -177,3 +177,54 @@ Response will reflect back an error when the Department or Employee does not exi
 ```
 
 ---
+
+## Get Company
+Get a Company to the database using the UUID
+
+|                          |                                                          |
+| ------------------------ | -------------------------------------------------------- |
+| **URL**                  | `/api/departments/{departmentId}/employees/{employeeId}` |
+| **Method**               | `GET`                                                    |
+| **Auth required**        | Yes                                                      |
+| **Permissions required** | `ROLE_EMPLOYER`                                          |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a representation of the Employee.
+
+For a Department with ID `a73002eb-becc-411f-9182-e7f01b632632` and name `Employee` on the local database.
+
+
+```json
+{
+  "id": "a73002eb-becc-411f-9182-e7f01b632632",
+  "name": "Employee 1",
+  "vaccinationStatus": "SECOND_DOSE",
+  "vaccinationBrand": "PFIZER",
+  "healthStatus": "HEALTHY"
+}
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Department or Employee does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T03:38:50.193+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees/c1219cbb-5c2e-4f1a-9e3-273a62321aae"
+}
+```
+
+---
