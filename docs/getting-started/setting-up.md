@@ -4,8 +4,9 @@ sidebar_position: 1
 
 # Roster Service
 
-## Dependencies
-* PostgreSQL
+## Services required
+* **PostgreSQL** to persist data
+* **AWS Cognito** for JWT authentication and authorization
 ## Setting up the service
 
 ### Dependencies
