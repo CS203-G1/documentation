@@ -234,3 +234,37 @@ Response will reflect back an error when the Department or Employee does not exi
   "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5fe42a64b9/rosters/d8ef2f16-a04a-41dd-849e-9e1407718d16"
 }
 ```
+
+---
+## Delete Roster
+Delete a Roster that belongs to a Work Location using the Roster Id and Work Location Id
+
+|                          |                                                          |
+| ------------------------ | -------------------------------------------------------- |
+| **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
+| **Method**               | `DELETE`                                                 |
+| **Auth required**        | Yes                                                      |
+| **Permissions required** | `ROLE_EMPLOYER`                                          |
+
+### Success Response
+
+**Code** : `200 OK`
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Work Location or Roster does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T04:16:23.786+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/work-locations/79e6e0b0-29f8-4211-b5e7-ee5ff42a64b9/rosters/d8ef2f16-a04a-41dd-849e-9e1407718d16"
+}
+```
+
+---
