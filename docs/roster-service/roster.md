@@ -74,12 +74,12 @@ For a Roster with invalid Date format
 ## Update Roster 
 Update an Roster that belongs to a WorkLocation to the database with the updated date
 
-|                          |                                                |
-| ------------------------ | ---------------------------------------------- |
+|                          |                                                           |
+| ------------------------ | --------------------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
-| **Method**               | `PUT`                                         |
-| **Auth required**        | Yes                                            |
-| **Permissions required** | `ROLE_EMPLOYER`                                |
+| **Method**               | `PUT`                                                     |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
 
 **Data constraints**
 
@@ -134,12 +134,12 @@ For a Roster with invalid Date format
 ## Get Rosters
 Get all Rosters that belongs to a particular Work Location from the database using the Work Location Id
 
-|                          |                                                           |
-| ------------------------ | --------------------------------------------------------- |
+|                          |                                                |
+| ------------------------ | ---------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters` |
-| **Method**               | `GET`                                                     |
-| **Auth required**        | Yes                                                       |
-| **Permissions required** | `ROLE_EMPLOYER`                                           |
+| **Method**               | `GET`                                          |
+| **Auth required**        | Yes                                            |
+| **Permissions required** | `ROLE_EMPLOYER`                                |
 
 
 ### Success Response
@@ -239,12 +239,12 @@ Response will reflect back an error when the Department or Employee does not exi
 ## Delete Roster
 Delete a Roster that belongs to a Work Location using the Roster Id and Work Location Id
 
-|                          |                                                          |
-| ------------------------ | -------------------------------------------------------- |
+|                          |                                                           |
+| ------------------------ | --------------------------------------------------------- |
 | **URL**                  | `/api/work-locations/{workLocationId}/rosters/{rosterId}` |
-| **Method**               | `DELETE`                                                 |
-| **Auth required**        | Yes                                                      |
-| **Permissions required** | `ROLE_EMPLOYER`                                          |
+| **Method**               | `DELETE`                                                  |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
 
 ### Success Response
 
