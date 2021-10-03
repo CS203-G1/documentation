@@ -90,12 +90,12 @@ For a Roster with invalid Date format
 ## Update Roster Employee
 Update a Roster Employee that belongs to a Roster and Employee to the database with basic information 
 
-|                          |                                                           |
-| ------------------------ | --------------------------------------------------------- |
+|                          |                                                  |
+| ------------------------ | ------------------------------------------------ |
 | **URL**                  | `/api/rosters/{rosterId}/employees/{employeeId}` |
-| **Method**               | `PUT`                                                     |
-| **Auth required**        | Yes                                                       |
-| **Permissions required** | `ROLE_EMPLOYER`                                           |
+| **Method**               | `PUT`                                            |
+| **Auth required**        | Yes                                              |
+| **Permissions required** | `ROLE_EMPLOYER`                                  |
 
 **Data constraints**
 
@@ -156,6 +156,38 @@ For a Roster with invalid Date format
   "status": 400,
   "error": "Bad Request",
   "path": "/rosters/bff4ccd3-bae4-4c2f-a8bd-fdc703df8c25/employees/a88f8825-34e2-44cb-a9f5-4482c82bbc48"
+}
+```
+
+---
+## Delete Roster
+Delete a Roster Employee that belongs to a Roster and Employee to the database with basic information 
+
+|                          |                                                  |
+| ------------------------ | ------------------------------------------------ |
+| **URL**                  | `/api/rosters/{rosterId}/employees/{employeeId}` |
+| **Method**               | `DELETE`                                         |
+| **Auth required**        | Yes                                              |
+| **Permissions required** | `ROLE_EMPLOYER`                                  |
+
+### Success Response
+
+**Code** : `200 OK`
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the RosterEmployee, Employee or Roster does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T04:37:25.820+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/rosters/bff4ccd3-bae5-4c2f-a8bd-fdc703df8c25/employees/a88f8825-34e2-44cb-a9f5-4482c82bbc48"
 }
 ```
 
