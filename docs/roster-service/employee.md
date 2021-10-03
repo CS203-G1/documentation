@@ -80,4 +80,67 @@ For an Employee with a null enum value
 }
 ```
 
----
+--- 
+
+## Update Employee 
+Update an Employee that belongs to a Department to the database with basic information 
+
+|                          |                                                      |
+| ------------------------ | ---------------------------------------------------- |
+| **URL**                  | `/departments/{departmentId}/employees/{employeeId}` |
+| **Method**               | `POST`                                               |
+| **Auth required**        | Yes                                                  |
+| **Permissions required** | `ROLE_EMPLOYER`                                      |
+
+**Data constraints**
+
+```json
+{
+    "name": "[1 to 30 chars]",
+    "vaccinationStatus": "non-null",
+    "vaccinationBrand": "non-null",
+    "healthStatus": "non-null"
+}
+```
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a representation of the newly updated Employee.
+
+For a Department with ID `a73002eb-becc-411f-9182-e7f01b632632` and name `Employee` on the local database with updated healthStatus of `ILL`.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+{
+  "id": "a73002eb-becc-411f-9182-e7f01b632632",
+  "name": "Employee 1",
+  "vaccinationStatus": "SECOND_DOSE",
+  "vaccinationBrand": "PFIZER",
+  "healthStatus": "ILL"
+}
+
+```
+
+### Error Response 
+
+**Code** : `404 Bad Request`
+
+**Content examples**
+
+Response will reflect back an error when the Department or Employee does not exist in the database.
+
+```json
+{
+  "timestamp": "2021-10-03T03:38:50.193+00:00",
+  "status": 404,
+  "error": "Not Found",
+  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees/c1219cbb-5c2e-4f1a-9e3-273a62321aae"
+}
+```
+
