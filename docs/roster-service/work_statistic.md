@@ -182,3 +182,50 @@ Could not find company 27b06c9d-a553-4a88-a681-b7cbc045a9e5.
 ```
 
 --- 
+
+## Get Daily Summary By Company
+Get company statistics summary for the day
+
+|                          |                                                  |
+| ------------------------ | ------------------------------------------------ |
+| **URL**                  | `/companies/{companyId}/work-statistics/summary` |
+| **Method**               | `GET`                                            |
+| **Auth required**        | Yes                                              |
+| **Permissions required** | `ROLE_EMPLOYER`                                  |
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a array of representation of the Work Statistics.
+
+For a Company with ID `14f671b0-511e-43e4-86bb-6828f7a8e12d`
+
+```json
+{
+  "employeesCount": 11,
+  "employeesCountChange": 10,
+  "leaveCount": 2,
+  "leaveCountChange": 50,
+  "onsiteCount": 5,
+  "onsiteCountChange": 25,
+  "covidCount": 0,
+  "covidCountChange": 0
+}
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back a string that explains what resource is not found.
+
+For a Company with ID `27b06c9d-a553-4a88-a681-b7cbc045a9e5` is not found on the local database.
+
+```
+Could not find company 27b06c9d-a553-4a88-a681-b7cbc045a9e5.
+```
