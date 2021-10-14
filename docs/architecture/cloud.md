@@ -11,6 +11,7 @@ sidebar_position: 1
 Note: Please contact [@bingyuyap](https://github.com/bingyuyap) for access to the deployment diagram.
 
 # Design decisions
+We are designing our solution to meet [ISO25000](http://iso25000.com/index.php/en/iso-25000-standards/iso-25010) requirements as close as possible. 
 ## Amazon Web Services
 We decided to host the software project on AWS Cloud Services as this software is meant to used by many companies in Singapore. In time to come, we want to scale to other countries as well where COVID-19 has impacted not just Singapore. 
 
