@@ -58,4 +58,10 @@ module.exports = {
       'dev-ops/ecs'
     ],
   },
+
+  'Design and Architecture': {
+    'Architecture': [
+      'architecture/deployment', 
+    ],
+  },
 };
