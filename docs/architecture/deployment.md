@@ -23,3 +23,10 @@ Furthermore, we want to scale to other devices, not just web browsers. We will b
 
 With API Gateway, we are able to increase the Security, Scalability and Maintainability of our software.
 
+### Application Load Balancer and Auto Scaling Group
+Using Application Load Balancer, we are able to direct traffic to Fargate instances that are able to meet the workload requirements. Together with the auto-scaling group, we are able to scale up and down to meet the current workload requirements. This increases the availability of the services as auto-scaling (as the name suggests) scales our instances automatically to handle traffic at all times. 
+
+Speaking of auto-scaling, it is most cost effective than manual scaling since it dynamically increases and decreases capacity as needed. When workload is low, like during night time, instances that are not used are terminated. 
+
+With that our software is more fault tolerant too, where failover is done with replicas as AWS detects an unhealthy instance. This explains the need for the `/health` endpoint configured in our Spring Boot components    
+
