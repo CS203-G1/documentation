@@ -48,17 +48,20 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'API Documentation',
+            to: 'docs/getting-started/intro', 
+            label: 'Guide', 
+            position: 'left'
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          {
+            to: 'docs/roster-service/company', 
+            label: 'API Reference', 
+            position: 'left'
+          },
+          {
+            to: 'docs/dev-ops/ecs', 
+            label: 'Deployment Guide', 
+            position: 'left'
+          },
         ],
       },
       footer: {
