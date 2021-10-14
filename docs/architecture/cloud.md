@@ -40,7 +40,7 @@ Why not Lambda, why Fargate? You may ask. It's because we need to develop Spring
 ### AWS Relational Database Service
 RDS is used for both staging and production databases. For staging, it reduces the need for the Front End team to run all 3 databases and all 3 services on their local machine just to be able to integrate with the backend services. FYI, the Front End engineer still uses Intel Chip 🤷‍♂️. Backend engineers do not need to run migration on their local databases too.
 
-For production, reasons like RDS being highly scalable, available and durable are the main reasons that we are using this service. We will also be launching read replicas to offload the master database and also acts as a failover plan when one database is unavailable. 
+For production, reasons like RDS being highly scalable, available and durable are the main reasons that we are using this service. We will also be launching read replicas to offload the master database and also acts as a failover plan when one database is unavailable. We are also able to shard the database logically using companies if we ever serve a company with large number of employees.
 
 
 
