@@ -10,8 +10,8 @@ sidebar_position: 1
 
 Note: Please contact [@bingyuyap](https://github.com/bingyuyap) for access to the deployment diagram.
 
-## Design decisions
-### Amazon Web Services
+# Design decisions
+## Amazon Web Services
 We decided to host the software project on AWS Cloud Services as this software is meant to used by many companies in Singapore. In time to come, we want to scale to other countries as well where COVID-19 has impacted not just Singapore. 
 
 ### API Gateway 
@@ -29,4 +29,13 @@ Using Application Load Balancer, we are able to direct traffic to Fargate instan
 Speaking of auto-scaling, it is most cost effective than manual scaling since it dynamically increases and decreases capacity as needed. When workload is low, like during night time, instances that are not used are terminated. 
 
 With that our software is more fault tolerant too, where failover is done with replicas as AWS detects an unhealthy instance. This explains the need for the `/health` endpoint configured in our Spring Boot components    
+
+### AWS Fargate for Roster, Analytics and Scraper
+Instead of EC2, Fargate is used as the software will not be run 24/7. With Fargate, we can scale up during the day and scale down during the night. While EC2 is more suitable for constant, large workloads like processing transactions or some sort. 
+
+You may also question the previous statement since we want to scale to other countries where they are operating at a different timezone, so there is possibility where there is a constant workload on our architecture. To address that, there is multiple regions and availability zones for AWS services. We can easily rebuild the services using the images in ECR for these other regions. Say we want to launch this product in the US, we would not want them to use the instance available in Singapore. That's stupid. We ideally should launch the instances as close as possible to our US users where they can experience minimized latency.
+
+Why not Lambda, why Fargate? You may ask. It's because we need to develop Spring Boot projects and dockerize them for this module. That's why. Jokes aside, we speculate that this software will be used consistently during day time - especially office hours. Lambda is more commonly used when the workload is not as consistent and is more burstable / unpredictable.
+
+### Microservices
 
