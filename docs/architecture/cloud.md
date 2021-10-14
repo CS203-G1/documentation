@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Software Architecture
+# Cloud Architecture
 
 ### Deployment Diagram
 ![Docusaurus](/img/architecture-diagram.png)

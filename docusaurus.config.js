@@ -63,7 +63,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             position: 'left'
           },
           {
-            to: 'docs/architecture/deployment', 
+            to: 'docs/architecture/cloud', 
             label: 'Design and Architecture', 
             position: 'left'
           },

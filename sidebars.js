@@ -60,8 +60,8 @@ module.exports = {
   },
 
   'Design and Architecture': {
-    'Architecture': [
-      'architecture/deployment', 
+    'Cloud': [
+      'architecture/cloud', 
     ],
   },
 };
