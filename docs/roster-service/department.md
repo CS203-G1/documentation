@@ -4,10 +4,12 @@ sidebar_position: 2
 
 #  Department
 ## Department Attributes
-| Attributes | Type   | Description                                 |
-| ---------- | ------ | ------------------------------------------- |
-| **Id**     | UUID   | UUID generated automatically by Spring Boot |
-| **Name**   | String | Company name given by the user              |
+| Attributes    | Type     | Description                                              |
+| ------------- | -------- | -------------------------------------------------------- |
+| **Id**        | UUID     | UUID generated automatically by Spring Boot              |
+| **CompanyId** | UUID     | UUID representing the company this department belongs to |
+| **Name**      | String   | Company name given by the user                           |
+| **CreatedAt** | DateTime | The date and time the department was created             |
 
 --- 
 
