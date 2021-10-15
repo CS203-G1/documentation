@@ -64,6 +64,7 @@ module.exports = {
       'architecture/cloud', 
       'architecture/microservice', 
       'architecture/faas', 
+      'architecture/database', 
     ],
   },
 };

@@ -5,7 +5,7 @@ sidebar_position: 1
 # Cloud Architecture
 
 ### Deployment Diagram
-![Docusaurus](/img/architecture-diagram.png)
+![Diagram](/img/architecture-diagram.png)
 [Diagram Link](https://app.diagrams.net/#G1Zng3hRo18A9IQyPTjcUSw1GeiGrXKw0I)
 
 Note: Please contact [@bingyuyap](https://github.com/bingyuyap) for access to the deployment diagram.

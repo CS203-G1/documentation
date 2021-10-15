@@ -4,10 +4,11 @@ sidebar_position: 1
 
 # Company 
 ## Company Attributes
-| Attributes | Type   | Description                                 |
-| ---------- | ------ | ------------------------------------------- |
-| **Id**     | UUID   | UUID generated automatically by Spring Boot |
-| **Name**   | String | Company name given by the user              |
+| Attributes    | Type     | Description                                    |
+| ------------- | -------- | ---------------------------------------------- |
+| **Id**        | UUID     | UUID generated automatically by Spring Boot    |
+| **Name**      | String   | Company name given by the user                 |
+| **CreatedAt** | DateTime | The date and time when the company was created |
 
 ---
 
@@ -113,12 +114,12 @@ Could not find company 27b06c9d-a553-4a88-a681-b7cbc045a9e5.
 ## Get All Companies
 Get all Companies that exist in the database
 
-|                          |                       |
-| ------------------------ | --------------------- |
+|                          |                  |
+| ------------------------ | ---------------- |
 | **URL**                  | `/api/companies` |
-| **Method**               | `GET`                 |
-| **Auth required**        | No                    |
-| **Permissions required** | None                  |
+| **Method**               | `GET`            |
+| **Auth required**        | No               |
+| **Permissions required** | None             |
 
 
 ### Success Response
