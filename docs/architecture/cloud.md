@@ -46,5 +46,12 @@ RDS is used for both staging and production databases. For staging, it reduces t
 
 For production, reasons like RDS being highly scalable, available and durable are the main reasons that we are using this service. We will also be launching read replicas to offload the master database and also acts as a failover plan when one database is unavailable. We are also able to shard the database logically using companies if we ever serve a company with large number of employees.
 
+### AWS Cognito
+AWS Cognito is used as service to manage our userpools, providing authentication and authorisation capabilities. We decided to use cognito as it provides us with industry standard security features such as OAuth 2.0, SAML 2.0, and OpenID Connect out of the box. It also provides us with an SDK to be used with the Sprintboot backend and the Javascript frontend, easing and speeding up the development process. 
 
+AWS cognito stores a user pool for us, with the details of the user. Since it is stored and managed by AWS, we can be ensured that is is encrypted with industry standards and will be highly scalable. 
 
+### AWS Amplify
+AWS Amplify serves as a SDK provider, and a hosting service for the Nextjs React frontend. By using the Amplify SDK, we will be able to connect to AWS cognito and configured Lambda functions easily. AWS Amplify provides a CI/CD pipeline for its hosting service, and automates the generation and allocating of the SSL certification. These features would increase the security and the ease of the development and deployment of the frontend.
+
+In the view of scalability, AWS Amplify comes packaged with AWS Cloudfront which is a Cloud Delivery Network (CDN) service. This would provide both performance and security to the web application. Performance is optimised with reduced latency and optimised querying of data due to AWS's large number of Points of Presence. Security is boosted with traffic encryption and access controls.
