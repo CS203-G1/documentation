@@ -2,11 +2,13 @@
 sidebar_position: 4
 ---
 
-# Database Design
 
-## Roster Database
+# Roster Database
+
+## Schema Diagram
 ![Diagram](/img/roster_db.png)
 
+## Tables
 ### Company
 | Attributes    | Type     | Description                                    |
 | ------------- | -------- | ---------------------------------------------- |
