@@ -36,6 +36,9 @@ module.exports = {
       'guideline/api_guideline',
       'guideline/format_guideline',
     ],
+    'Code Practices': [
+      'code-practice/must_have'
+    ],
   },
 
   'API References': {
