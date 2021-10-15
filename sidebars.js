@@ -37,7 +37,8 @@ module.exports = {
       'guideline/format_guideline',
     ],
     'Code Practices': [
-      'code-practice/must_have'
+      'code-practice/must_have',
+      'code-practice/good_to_have',
     ],
   },
 
