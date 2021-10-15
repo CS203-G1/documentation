@@ -79,4 +79,13 @@ module.exports = {
       'database/analytics_database', 
     ]
   },
+  "GUI and Design": {
+    'User Management': [
+      'gui/user-management/pre-login',
+      'gui/user-management/login',
+    ],
+    'Analytics': [
+      'gui/analytics/dashboard',
+    ]
+  }
 };

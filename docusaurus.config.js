@@ -67,6 +67,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             label: 'Design and Architecture', 
             position: 'left'
           },
+          {
+            to: 'docs/gui/user-management/pre-login', 
+            label: 'GUI and Design', 
+            position: 'left'
+          },
         ],
       },
       footer: {
