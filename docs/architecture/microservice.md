@@ -4,6 +4,16 @@ sidebar_position: 2
 
 # Microservice Pattern
 
+## Design
+
+### Roster 
+Roster service is a containerized Spring Boot application. It is responsible for managing and viewing roster schedules. It also shows statistic of the companies' roster related metrics like employees working onsite and remotely.
+### Analytics
+Analytics service is a containerized Spring Boot application, responsible for a logging of vaccination status of each employee and covid rate. This service will be integrated with a regression model to predict the recoverability of a company according to the data we have about the company.
+
+### Scraper
+Scraper service is a containerized Spring Boot application that scrapes the government website from time to time.
+
 ## Why Microservices
 
 For our solution, we are using the Microservice Pattern instead of Monolithic Pattern. Main reasons are as below:
