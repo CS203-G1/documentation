@@ -63,6 +63,7 @@ module.exports = {
     'Architecture': [
       'architecture/cloud', 
       'architecture/microservice', 
+      'architecture/faas', 
     ],
   },
 };
