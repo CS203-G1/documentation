@@ -64,7 +64,9 @@ module.exports = {
       'architecture/cloud', 
       'architecture/microservice', 
       'architecture/faas', 
-      'architecture/database', 
     ],
+    'Database': [
+      'database/roster_database', 
+    ]
   },
 };
