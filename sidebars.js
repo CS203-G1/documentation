@@ -31,6 +31,9 @@ module.exports = {
       'getting-started/roster-service',
       'getting-started/cognito-jwt',
     ],
+    'Guidelines': [
+      'guideline/coding_guideline',
+    ],
   },
 
   'API References': {
