@@ -31,7 +31,7 @@ Casing: `CamelCasing`
 Examples: 
 - `WorkStatisticResponseModel` represents the response model that is converted from `WorkStatistic` Object.
 
-### Instance Variables and Local
+### Instance Variables and Local Variables
 
 Format: `contextModelName`
 
