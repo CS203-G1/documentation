@@ -70,3 +70,18 @@ Note: These are just some recommended guideline for the engineers in order to st
             └── validator
                 └── AttributeValidator
 ```
+
+### Method Definition
+Format:
+```java
+visibility return-type method-name(parameter-type parameter) {
+    // comments
+}
+```
+
+Example: 
+```java
+public boolean isValid(RosterEmployee rosterEmployee, ConstraintValidatorContext constraintValidatorContext) {
+    // actual implementation
+}
+```
