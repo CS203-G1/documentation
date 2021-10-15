@@ -34,6 +34,7 @@ module.exports = {
     'Guidelines': [
       'guideline/naming_guideline',
       'guideline/api_guideline',
+      'guideline/format_guideline',
     ],
   },
 

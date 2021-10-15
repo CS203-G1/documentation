@@ -145,5 +145,3 @@ Wrong Example for getting a daily work statistic by company Id
 ```sh
 GET COMPANIES/1/work_statistics/daily
 ```
-
-## Directories
