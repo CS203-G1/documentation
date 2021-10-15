@@ -32,7 +32,8 @@ module.exports = {
       'getting-started/cognito-jwt',
     ],
     'Guidelines': [
-      'guideline/coding_guideline',
+      'guideline/naming_guideline',
+      'guideline/api_guideline',
     ],
   },
 
