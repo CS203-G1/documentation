@@ -12,6 +12,7 @@ sidebar_position: 1
 | **Vaccination Status** | Enum       | Current vaccination status of the employee (i.e. Not Vaccinated) |
 | **Vaccination Brand**  | Enum       | Brand of vaccine taken by employee (i.e. Pfizer)                 |
 | **Health Status**      | Enum       | Current health status of the employee (i.e. Healthy)             |
+| **Created At**         | Date       | Timestamp at which employee is created (in YY-DD-MM HH:MM:SS)    |
 
 
 ## Get Employee

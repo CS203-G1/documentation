@@ -42,7 +42,7 @@ Why not Lambda, why Fargate? You may ask. It's because we need to develop Spring
 Now why are we using Lambda for Approvals? Approving requests like Vaccination verification, leave request and etc are a very one-off thing. We think it is an overkill to have a Fargate instance just for this functionality. For Auto Scheduler, it runs only once in a while (every week or every 2 weeks). In other words, its a time-driven function. Similarly, we do not require a container as a service just for this simple function.
 
 ### AWS Relational Database Service
-RDS is used for both staging and production databases. For staging, it reduces the need for the Front End team to run all 3 databases and all 3 services on their local machine just to be able to integrate with the backend services. FYI, the Front End engineer still uses Intel Chip 🤷‍♂️. Backend engineers do not need to run migration on their local databases too.
+RDS is used for both staging and production databases. For staging, it reduces the need for the Front End team to run all 3 databases and all 3 services on their local machine just to be able to integrate with the backend services. Backend engineers do not need to run migration on their local databases too.
 
 For production, reasons like RDS being highly scalable, available and durable are the main reasons that we are using this service. We will also be launching read replicas to offload the master database and also acts as a failover plan when one database is unavailable. We are also able to shard the database logically using companies if we ever serve a company with large number of employees.
 
