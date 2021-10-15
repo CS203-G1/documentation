@@ -67,6 +67,7 @@ module.exports = {
     ],
     'Database': [
       'database/roster_database', 
+      'database/analytics_database', 
     ]
   },
 };
