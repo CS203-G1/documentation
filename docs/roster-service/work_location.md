@@ -4,13 +4,15 @@ sidebar_position: 6
 
 #  Work Location
 ## Work Location Attributes
-| Attributes     | Type       | Description                                  |
-| -------------- | ---------- | -------------------------------------------- |
-| **Id**         | UUID       | UUID generated automatically by Spring Boot  |
-| **Name**       | String     | Company name given by the user               |
-| **Address**    | String     | Address of the the work location             |
-| **Capacity**   | int        | Maximum capacity of the work location        |
-| **Department** | Department | The department this work location belongs to |
+| Attributes     | Type       | Description                                                 |
+| -------------- | ---------- | ----------------------------------------------------------- |
+| **Id**         | UUID       | UUID generated automatically by Spring Boot                 |
+| **Name**       | String     | Company name given by the user                              |
+| **Address**    | String     | Address of the the work location                            |
+| **Capacity**   | int        | Maximum capacity of the work location                       |
+| **Department** | Department | The department this work location belongs to                |
+| **Company**    | Company    | The company of the department this work location belongs to |
+
 
 --- 
 

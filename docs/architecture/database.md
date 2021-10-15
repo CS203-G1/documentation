@@ -27,3 +27,16 @@ A company can have many departments and employees.
 | **CreatedAt** | DateTime | The date and time the department was created             |
 
 Each department can only belong to one and only one company.
+
+
+### Work Location
+| Attributes       | Type   | Description                                                 |
+| ---------------- | ------ | ----------------------------------------------------------- |
+| **Id**           | UUID   | UUID generated automatically by Spring Boot                 |
+| **DepartmentId** | UUID   | The department this work location belongs to                |
+| **CompanyId**    | UUID   | The company of the department this work location belongs to |
+| **Name**         | String | Company name given by the user                              |
+| **Address**      | String | Address of the the work location                            |
+| **Capacity**     | int    | Maximum capacity of the work location                       |
+
+Each work location can only belong to one and only one department. By transitive relationship, that means it also can only belong to one and only one company. Think of an office branch.
