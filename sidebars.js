@@ -62,6 +62,7 @@ module.exports = {
   'Design and Architecture': {
     'Architecture': [
       'architecture/cloud', 
+      'architecture/microservice', 
     ],
   },
 };
