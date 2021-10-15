@@ -4,32 +4,31 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Guide',
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Getting Started is to get engineers start with familiarizing themselves with the services especially on deploying and running them on local machine to be used. 
+
+        Guidelines and Code Practices documents the guidelines and practices we should have. These are the things engineers should look out for when reviewing code and approving pull requests. But it is up to the engineers discretion to practice them. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'API Reference',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Documentation of all available APIs done by the Backend Engineers. Frontend Engineers can refer to this single source of truth to understand the data and constraints for each APIs. Dev Ops Engineers will be following this documentation when deploying API Gateway.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Design and Architecture',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Documentation of all the design decision. This includes choices of services used like AWS services. Architectural Design Decisions like choosing Microservice Pattern is also documented here. You can also find our database schema design for each service over here. 
       </>
     ),
   },
