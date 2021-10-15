@@ -28,6 +28,12 @@ A company can have many departments and employees.
 
 Each department can only belong to one and only one company.
 
+### Roster 
+| Attributes         | Type      | Description                                 |
+| ------------------ | --------- | ------------------------------------------- |
+| **Id**             | UUID      | UUID generated automatically by Spring Boot |
+| **WorkLocationId** | UUID      | The work location this roster is for        |
+| **date**           | LocalDate | The date the roster is for                  |
 
 ### Work Location
 | Attributes       | Type   | Description                                                 |
