@@ -30,6 +30,24 @@ Each department can only belong to one and only one company.
 
 A department can have many work locations.
 
+### Employee
+| Attributes            | Type    | Description                                               |
+| --------------------- | ------- | --------------------------------------------------------- |
+| **Id**                | UUID    | UUID generated automatically by Spring Boot               |
+| **DepartmentId**      | UUID    | The department this employee is assigned to               |
+| **CompanyId**         | UUID    | The company this employee belongs to                      |
+| **Name**              | String  | Employee's name                                           |
+| **VaccinationStatus** | int     | Enum type of vaccination status for a particular employee |
+| **VaccinationBrand**  | int     | Enum type of the vaccine brand for a particular employee  |
+| **HealthStatus**      | int     | Current health status of the employee                     |
+| **IsInCompany**       | boolean | Is the employee in the company                            |
+
+Each employee can belong to one and only one company and one and only one department. 
+
+An employee can be assigned to multiple rosters but can only be assigned to one roster every day. 
+
+
+
 ### Roster Employee
 | Attributes              | Type          | Description                                                |
 | ----------------------- | ------------- | ---------------------------------------------------------- |
