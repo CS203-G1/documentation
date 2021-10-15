@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>CS203-G1 Blog</title>
+        <title>New Normal Blog</title>
         <link>https://CS203-G1.github.io/documentation/blog</link>
-        <description>CS203-G1 Blog</description>
+        <description>New Normal Blog</description>
         <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
