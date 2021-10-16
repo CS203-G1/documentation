@@ -11,3 +11,6 @@ sidebar_position: 1
 
 ### Working History
 ![Docusaurus](/img/gui/analytics/working-history.png)
+
+## Trend
+![Docusaurus](/img/gui/analytics/trend-chart.png)

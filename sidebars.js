@@ -86,6 +86,9 @@ module.exports = {
     ],
     'Analytics': [
       'gui/analytics/dashboard',
+    ],
+    'Employees': [
+      'gui/employees/employees'
     ]
   }
 };
