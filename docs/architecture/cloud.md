@@ -41,6 +41,10 @@ Why not Lambda, why Fargate? You may ask. It's because we need to develop Spring
 ### AWS Lambda for Auto Scheduler and Approval Functions
 Now why are we using Lambda for Approvals? Approving requests like Vaccination verification, leave request and etc are a very one-off thing. We think it is an overkill to have a Fargate instance just for this functionality. For Auto Scheduler, it runs only once in a while (every week or every 2 weeks). In other words, its a time-driven function. Similarly, we do not require a container as a service just for this simple function.
 
+Why do you see 2 Lambda Services instead of one? One of them is a driver function, think of it as a `public static void main` in Java. What the driver does is to be run once every week. This function will query all the work locations and all the employees in each work location and then pass these data to the second Lambda Service. This second Lambda will be doing the scheduling for each work location. 
+
+Here, we are making use of the auto-scaling feature of AWS Lambda provides. So, we will have multiple instances scheduling for each work location concurrently instead of having each job run one after another.
+
 ### AWS Relational Database Service
 RDS is used for both staging and production databases. For staging, it reduces the need for the Front End team to run all 3 databases and all 3 services on their local machine just to be able to integrate with the backend services. Backend engineers do not need to run migration on their local databases too.
 
