@@ -44,6 +44,7 @@ module.exports = {
 
   'API References': {
     'Roster': [
+      'roster-service/art_request',
       'roster-service/company', 
       'roster-service/department',
       'roster-service/employee',
