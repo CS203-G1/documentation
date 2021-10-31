@@ -35,6 +35,7 @@ module.exports = {
       'guideline/naming_guideline',
       'guideline/api_guideline',
       'guideline/format_guideline',
+      'guideline/testing_guideline',
     ],
     'Code Practices': [
       'code-practice/must_have',
