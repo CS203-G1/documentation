@@ -21,7 +21,7 @@ Add a Work Location that belongs to a Department of a Company to the database wi
 
 |                          |                                                                       |
 | ------------------------ | --------------------------------------------------------------------- |
-| **URL**                  | `/api/companies/{companyId}/departments/{departments}/work-locations` |
+| **URL**                  | `/api/departments/{departments}/work-locations` |
 | **Method**               | `POST`                                                                |
 | **Auth required**        | No                                                                    |
 | **Permissions required** | None                                                                  |
@@ -87,7 +87,7 @@ Get a Work Location that belongs to a Department from a particular Company using
 
 |                          |                                                                                         |
 | ------------------------ | --------------------------------------------------------------------------------------- |
-| **URL**                  | `/api/companies/{companyId}/departments/{departmentId}/work-locations/{workLocationId}` |
+| **URL**                  | `/api/departments/{departmentId}/work-locations/{workLocationId}` |
 | **Method**               | `GET`                                                                                   |
 | **Auth required**        | No                                                                                      |
 | **Permissions required** | None                                                                                    |
@@ -141,7 +141,7 @@ Do a complete update for a Work Location that belongs to a Department of a Compa
 
 |                          |                                                                                         |
 | ------------------------ | --------------------------------------------------------------------------------------- |
-| **URL**                  | `/api/companies/{companyId}/departments/{departmentId}/work-locations/{workLocationId}` |
+| **URL**                  | `/api/departments/{departmentId}/work-locations/{workLocationId}` |
 | **Method**               | `PUT`                                                                                   |
 | **Auth required**        | No                                                                                      |
 | **Permissions required** | None                                                                                    |
@@ -204,7 +204,7 @@ Delete a Work Location that belongs to a Department of a Company using the Compa
 
 |                          |                                                                                         |
 | ------------------------ | --------------------------------------------------------------------------------------- |
-| **URL**                  | `/api/companies/{companyId}/departments/{departmentId}/work-locations/{workLocationId}` |
+| **URL**                  | `/api/departments/{departmentId}/work-locations/{workLocationId}` |
 | **Method**               | `DELETE`                                                                                |
 | **Auth required**        | No                                                                                      |
 | **Permissions required** | None                                                                                    |
