@@ -9,8 +9,6 @@ sidebar_position: 4
 | **Id**                  | UUID          | UUID generated automatically by Spring Boot                |
 | **Roster**              | Roster        | The Roster this RosterEmployee object is associated with   |
 | **Employee**            | Employee      | The Employee this RosterEmployee object is associated with |
-| **FromDateTime**        | LocalDateTime | Start time of the Roster for a given Employee              |
-| **ToDateTime**          | LocalDateTime | End time of the Roster for a given Employee                |
 | **CurrentHealthStatus** | enum          | The health status of the Employee at that point in timeÎ   |
 
 
@@ -25,14 +23,6 @@ Add a Roster Employee that belongs to a Roster and Employee to the database with
 | **Auth required**        | Yes                                              |
 | **Permissions required** | `ROLE_EMPLOYER`                                  |
 
-**Data constraints**
-
-```json
-{
-  "fromDateTime": "YYYY-MM-DDThh:mm:ss.sss",
-  "toDateTime": "YYYY-MM-DDThh:mm:ss.sss"
-}
-```
 
 ### Success Response
 
@@ -61,8 +51,6 @@ Note that `id` is auto-generated and of `UUID` datatype
     "vaccinationBrand": "PFIZER",
     "healthStatus": "HEALTHY"
   },
-  "fromDateTime": "2022-09-16T15:00:00",
-  "toDateTime": "2022-09-16T16:00:00",
   "currentHealthStatus": "HEALTHY"
 }
 
@@ -87,7 +75,7 @@ For a Roster with invalid Date format
 }
 ```
 ---
-## Update Roster Employee
+## Update Roster Employee [Deprecated]
 Update a Roster Employee that belongs to a Roster and Employee to the database with basic information 
 
 |                          |                                                  |
@@ -97,14 +85,6 @@ Update a Roster Employee that belongs to a Roster and Employee to the database w
 | **Auth required**        | Yes                                              |
 | **Permissions required** | `ROLE_EMPLOYER`                                  |
 
-**Data constraints**
-
-```json
-{
-  "fromDateTime": "2022-09-16T15:00:00.000",
-  "toDateTime": "2022-09-16T17:00:00.000"
-}
-```
 
 ### Success Response
 
