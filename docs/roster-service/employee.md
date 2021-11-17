@@ -11,6 +11,7 @@ sidebar_position: 3
 | **Department**        | Department | The department this employee is assigned to               |
 | **Company**           | Company    | The company this employee belongs to                      |
 | **Name**              | String     | Employee's name                                           |
+| **Email**             | String     | Employee's email                                          |
 | **VaccinationStatus** | enum       | Enum type of vaccination status for a particular employee |
 | **VaccinationBrand**  | enum       | Enum type of the vaccine brand for a particular employee  |
 | **HealthStatus**      | enum       | Current health status of the employee                     |
