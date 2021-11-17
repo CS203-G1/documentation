@@ -84,6 +84,56 @@ For an Employee with a null enum value
 
 --- 
 
+## Add Employee To Work Location
+Assign a Work Location to a particular Employee
+
+|                          |                                                           |
+| ------------------------ | --------------------------------------------------------- |
+| **URL**                  | `/work-locations/{workLocationId}/employees/{employeeId}` |
+| **Method**               | `POST`                                                    |
+| **Auth required**        | Yes                                                       |
+| **Permissions required** | `ROLE_EMPLOYER`                                           |
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a representation of the newly added Employee.
+
+For a Department with ID `a73002eb-becc-411f-9182-e7f01b632632` and name `Employee` on the local database.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+{
+  "id": "a73002eb-becc-411f-9182-e7f01b632632",
+  "name": "Employee 1",
+  "vaccinationStatus": "SECOND_DOSE",
+  "vaccinationBrand": "PFIZER",
+  "healthStatus": "HEALTHY"
+}
+
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when there is no such Work Location found.
+
+For a missing Work Location with supposed ID `missing-id`
+
+```json
+Could not find work location missing-id.
+```
+
+--- 
+
 ## Update Employee 
 Update an Employee that belongs to a Department to the database with basic information 
 
