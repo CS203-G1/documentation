@@ -32,6 +32,7 @@ Add an Employee that belongs to a Department to the database with basic informat
 
 ```json
 {
+    "email": "valid email",  
     "name": "[1 to 30 chars]",
     "vaccinationStatus": "non-null",
     "vaccinationBrand": "non-null",
@@ -55,6 +56,7 @@ Note that `id` is auto-generated and of `UUID` datatype
 ```json
 {
   "id": "a73002eb-becc-411f-9182-e7f01b632632",
+  "email": "sample@example.com",
   "name": "Employee 1",
   "vaccinationStatus": "SECOND_DOSE",
   "vaccinationBrand": "PFIZER",
@@ -83,6 +85,20 @@ For an Employee with a null enum value
 ```
 
 --- 
+
+## Add Employeer
+Add an Employer that belongs to a Department to the database with basic information 
+
+|                          |                                         |
+| ------------------------ | --------------------------------------- |
+| **URL**                  | `/departments/{departmentId}/employers` |
+| **Method**               | `POST`                                  |
+| **Auth required**        | Yes                                     |
+| **Permissions required** | `ROLE_SUPER_USER`                       |
+
+For request body, sample responses refer to Add Employee.
+
+---
 
 ## Add Employee To Work Location
 Assign a Work Location to a particular Employee
