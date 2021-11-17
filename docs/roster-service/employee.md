@@ -372,7 +372,7 @@ For more information, please refer to [Java getUserStatus documentations](https:
 
 Response will reflect back an error when the Employee does not exist in the database.
 ```json
-Could not find company <missing-id>
+Could not find employee <missing-id>
 ```
 
 ---
