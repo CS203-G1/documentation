@@ -17,7 +17,7 @@ Examples:
 
 Format: `ModelName`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples: 
 - `WorkLocation` represents the class for work locations
@@ -26,7 +26,7 @@ Examples:
 
 Format: `ModelNameResponseModel`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples: 
 - `WorkStatisticResponseModel` represents the response model that is converted from `WorkStatistic` Object.
@@ -44,7 +44,7 @@ Examples:
 
 Format: `SubjectDescriptionException`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples:
 - `EmployeeNotFoundException` represents a runtime error where an `Employee` object is not found.
@@ -53,7 +53,7 @@ Examples:
 
 Format: `ModelNameService` and `ModelNameServiceImpl`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples:
 - `RosterService` represents the service class for `Roster` model.
@@ -63,7 +63,7 @@ Examples:
 
 Format: `ContextSubjectActionTask`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples:
 - `ScheduledEmployeeLoggingTask` represents a scheduled task that is responsible for logging employee models
@@ -71,7 +71,7 @@ Examples:
 ### Validator
 Format: `AttributeValidator`
 
-Casing: `CamelCasing` 
+Casing: `PascalCasing` 
 
 Examples:
 - `DateTimes Validator` represents a validator for `DateTimes` attribute
