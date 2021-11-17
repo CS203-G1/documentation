@@ -4,12 +4,14 @@ sidebar_position: 5
 
 #  Roster
 ## Roster Attributes
-| Attributes         | Type         | Description                                   |
-| ------------------ | ------------ | --------------------------------------------- |
-| **Id**             | UUID         | UUID generated automatically by Spring Boot   |
-| **date**           | LocalDate    | The date the roster is for                    |
-| **WorkLocation**   | WorkLocation | The work location this roster is for          |
-| **RosterEmployee** | Set          | Set of RosterEmployee objects this Roster has |
+| Attributes         | Type          | Description                                   |
+| ------------------ | ------------- | --------------------------------------------- |
+| **Id**             | UUID          | UUID generated automatically by Spring Boot   |
+| **date**           | LocalDate     | The date the roster is for                    |
+| **fromDateTime**   | LocalDateTime | The starting time of the roster               |
+| **toDateTime**     | LocalDateTime | The ending time of the roster                 |
+| **WorkLocation**   | WorkLocation  | The work location this roster is for          |
+| **RosterEmployee** | Set           | Set of RosterEmployee objects this Roster has |
 
 --- 
 
@@ -27,7 +29,9 @@ Add an Roster that belongs to a WorkLocation to the database with basic informat
 
 ```json
 {
-  "date": "YYYY-MM-DD"
+  "date": "YYYY-MM-DD",
+  "fromDateTime": "2021-11-12T09:00:00.000",
+  "toDateTime": "2021-11-12T17:00:00.000"
 }
 ```
 
@@ -47,7 +51,9 @@ Note that `id` is auto-generated and of `UUID` datatype
 ```json
 {
   "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
-  "date": "2021-09-16"
+  "date": "2021-09-16",
+  "fromDateTime": "2021-11-12T09:00:00.000",
+  "toDateTime": "2021-11-12T17:00:00.000"
 }
 
 ```
@@ -85,7 +91,9 @@ Update an Roster that belongs to a WorkLocation to the database with the updated
 
 ```json
 {
-  "date": "YYYY-MM-DD"
+  "date": "YYYY-MM-DD",
+  "fromDateTime": "YYYY-MM-DDThh:mm:ss.sss",
+  "toDateTime": "YYYY-MM-DDThh:mm:ss.sss"
 }
 ```
 
@@ -105,7 +113,9 @@ Note that `id` is auto-generated and of `UUID` datatype
 ```json
 {
   "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
-  "date": "2021-09-16"
+  "date": "2021-09-16",
+  "fromDateTime": "2021-09-16T09:00:00.000",
+  "toDateTime": "2021-09-16T17:00:00.000"
 }
 
 ```
@@ -159,11 +169,15 @@ Note that `id` is auto-generated and of `UUID` datatype
 [
  {
     "id": "ae15ede6-d5af-4aab-ad4d-ad13ee49af70",
-    "date": "2021-09-16"
+    "date": "2021-09-16",
+    "fromDateTime": "2021-09-16T09:00:00.000",
+    "toDateTime": "2021-09-16T17:00:00.000"
   },
   {
     "id": "c0c13d3a-060b-4149-8b33-cc2d20a22ced",
-    "date": "2021-09-17"
+    "date": "2021-09-17",
+    "fromDateTime": "2021-09-17T09:00:00.000",
+    "toDateTime": "2021-09-17T17:00:00.000"
   }
 ]
 ```
