@@ -348,3 +348,60 @@ Could not find company <missing-id>
 ```
 
 ---
+
+## Get Weekly Rosters By Employee Id
+Get the list of rosters for a specified employee for the current week
+
+|                          |                                              |
+| ------------------------ | -------------------------------------------- |
+| **URL**                  | `/api/employees/{employeeId}/rosters/weekly` |
+| **Method**               | `GET`                                        |
+| **Auth required**        | Yes                                          |
+| **Permissions required** | `ROLE_EMPLOYEE`                              |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a array representation of the Rosters belonging to the employee for the week.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+{
+  [
+    {
+      "id": "595998a6-c130-4e53-b677-6a206a5593c8",
+      "date": "2021-11-04",
+      "fromDateTime": "2021-11-04T09:00:00",
+      "toDateTime": "2021-11-04T17:00:00"
+    },
+    ...
+    {
+      "id": "12341234-1234-1234-1234-132412341234",
+      "date": "2021-11-08",
+      "fromDateTime": "2021-11-08T09:00:00",
+      "toDateTime": "2021-11-08T17:00:00"
+    },
+  ]
+}
+
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Employee does not exist
+
+```json
+Could not find employee <missing-id>
+```
+
+---
