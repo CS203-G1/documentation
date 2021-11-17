@@ -86,7 +86,7 @@ For an Employee with a null enum value
 
 --- 
 
-## Add Employeer
+## Add Employer
 Add an Employer that belongs to a Department to the database with basic information 
 
 |                          |                                         |
@@ -204,12 +204,7 @@ Note that `id` is auto-generated and of `UUID` datatype
 Response will reflect back an error when the Department or Employee does not exist in the database.
 
 ```json
-{
-  "timestamp": "2021-10-03T03:38:50.193+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees/c1219cbb-5c2e-4f1a-9e3-273a62321aae"
-}
+Could not find employee <missing-id>
 ```
 
 ---
@@ -236,12 +231,7 @@ Delete a Employee that belongs to a Department using the Employee Id and Departm
 Response will reflect back an error when the Department or Employee does not exist in the database.
 
 ```json
-{
-  "timestamp": "2021-10-03T03:38:50.193+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees/c1219cbb-5c2e-4f1a-9e3-273a62321aae"
-}
+Could not find employee <missing-id>
 ```
 
 ---
@@ -271,6 +261,7 @@ For a Department with ID `a73002eb-becc-411f-9182-e7f01b632632` and name `Employ
 ```json
 {
   "id": "a73002eb-becc-411f-9182-e7f01b632632",
+  "email": "samples@example.com",
   "name": "Employee 1",
   "vaccinationStatus": "SECOND_DOSE",
   "vaccinationBrand": "PFIZER",
@@ -287,12 +278,7 @@ For a Department with ID `a73002eb-becc-411f-9182-e7f01b632632` and name `Employ
 Response will reflect back an error when the Department or Employee does not exist in the database.
 
 ```json
-{
-  "timestamp": "2021-10-03T03:38:50.193+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "path": "/departments/692b1d0e-fe49-4b05-8b01-f79607da7632/employees/c1219cbb-5c2e-4f1a-9e3-273a62321aae"
-}
+Could not find employee <missing-id>
 ```
 
 ---
@@ -346,12 +332,7 @@ For a company with two employees:
 Response will reflect back an error when the Company does not exist in the database.
 
 ```json
-{
-  "timestamp": "2021-10-03T15:58:47.726+00:00",
-  "status": 404,
-  "error": "Not Found",
-  "path": "/companies/efd12781-392b-4c97-b388-8722bd709602/employees"
-}
+Could not find company <missing-id>
 ```
 
 ---
