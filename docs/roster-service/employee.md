@@ -244,7 +244,7 @@ Get a Employee to the database using the Employee Id and Department Id
 | **URL**                  | `/api/departments/{departmentId}/employees/{employeeId}` |
 | **Method**               | `GET`                                                    |
 | **Auth required**        | Yes                                                      |
-| **Permissions required** | `ROLE_EMPLOYER`                                          |
+| **Permissions required** | `ROLE_EMPLOYEE`                                          |
 
 
 ### Success Response
@@ -283,7 +283,7 @@ Could not find employee <missing-id>
 
 ---
 
-## Get All Employes from Company
+## Get All Employees from Company
 Get all Employees from a Company the database using the Company Id
 
 |                          |                                        |
@@ -331,6 +331,46 @@ For a company with two employees:
 
 Response will reflect back an error when the Company does not exist in the database.
 
+```json
+Could not find company <missing-id>
+```
+
+---
+
+## Get Employee Cognito Status
+Get Cognito Status for a particular employee
+
+|                          |                                              |
+| ------------------------ | -------------------------------------------- |
+| **URL**                  | `/api/employees/{employeeId}/cognito-status` |
+| **Method**               | `GET`                                        |
+| **Auth required**        | Yes                                          |
+| **Permissions required** | `ROLE_EMPLOYER`                              |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a string that represents the status
+
+For an employee that has been confirmed in the Cognito Pool
+
+```json
+CONFIRMED
+```
+
+For more information, please refer to [Java getUserStatus documentations](https://javadoc.io/static/com.amazonaws/aws-java-sdk-cognitoidp/1.11.601/com/amazonaws/services/cognitoidp/model/AdminGetUserResult.html#getUserStatus--).
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Employee does not exist in the database.
 ```json
 Could not find company <missing-id>
 ```
