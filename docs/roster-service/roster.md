@@ -282,3 +282,69 @@ Response will reflect back an error when the Work Location or Roster does not ex
 ```
 
 ---
+
+## Get Rosters by Employer Id and Date
+Get a list of Rosters according to the employer's company and for the date specified
+
+|                          |                                                   |
+| ------------------------ | ------------------------------------------------- |
+| **URL**                  | `/api/employers/{employerId}/rosters/date/{date}` |
+| **Method**               | `GET`                                             |
+| **Auth required**        | Yes                                               |
+| **Permissions required** | `ROLE_EMPLOYER`                                   |
+
+
+### Success Response
+
+**Code** : `200 OK`
+
+**Content examples**
+
+Response will reflect back a array representation of the Rosters belonging to the employer's company for the date specified.
+
+Note that `id` is auto-generated and of `UUID` datatype
+
+
+```json
+{
+  [
+    {
+      "roster": {
+        "id": "595998a6-c130-4e53-b677-6a206a5593c8",
+        "date": "2021-11-03",
+        "fromDateTime": "2021-11-03T09:00:00",
+        "toDateTime": "2021-11-03T17:00:00"
+      },
+      "employees": [
+        {
+          "id": "3885b9ed-947c-4c71-b18f-d624c5e1413a",
+          "name": "Yangshun Tay",
+          "email": null,
+          "vaccinationStatus": "SECOND_DOSE",
+          "vaccinationBrand": "PFIZER",
+          "healthStatus": "HEALTHY",
+          "createdAt": "2021-10-07T00:00:00",
+          "isInCompany": true
+        },
+        ...
+      ]
+    }
+    ...
+  ]
+}
+
+```
+
+### Error Response 
+
+**Code** : `404 Not Found`
+
+**Content examples**
+
+Response will reflect back an error when the Employer or Company does not exist
+
+```json
+Could not find company <missing-id>
+```
+
+---
